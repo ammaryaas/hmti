@@ -25,7 +25,7 @@
                 </summary>
                 <div class="pointer-events-none absolute right-0 top-full mt-2 w-44 overflow-hidden rounded-xl border border-white/20 bg-[#B53737] text-white opacity-0 shadow-2xl transition duration-200 ease-out group-open:pointer-events-auto group-open:opacity-100">
                     <a href="{{ route('about-us') }}" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>HMTI</a>
-                    <a href="#" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>Kabinet</a>
+                    <a href="{{ route('about-us-kabinet') }}" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>Kabinet</a>
                     <a href="#" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>IKATI</a>
                 </div>
             </details>
