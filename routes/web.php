@@ -9,6 +9,8 @@ Route::get('/', function () {
 
 Route::view('/about-us', 'about-us')->name('about-us');
 Route::view('/about-us-kabinet', 'about-us-kabinet')->name('about-us-kabinet');
+Route::view('/about-us-ikati', 'about-us-ikati')->name('about-us-ikati');
+Route::view('/artery', 'artery')->name('artery');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

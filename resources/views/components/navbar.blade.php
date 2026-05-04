@@ -3,6 +3,7 @@
 @php
     $homeActive = $active === 'home';
     $aboutActive = $active === 'about';
+    $arteryActive = $active === 'artery';
 @endphp
 
 <header class="fixed inset-x-0 top-0 z-[9999] border-b border-white/15 bg-[#B53737] shadow-lg">
@@ -26,11 +27,11 @@
                 <div class="pointer-events-none absolute right-0 top-full mt-2 w-44 overflow-hidden rounded-xl border border-white/20 bg-[#B53737] text-white opacity-0 shadow-2xl transition duration-200 ease-out group-open:pointer-events-auto group-open:opacity-100">
                     <a href="{{ route('about-us') }}" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>HMTI</a>
                     <a href="{{ route('about-us-kabinet') }}" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>Kabinet</a>
-                    <a href="#" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>IKATI</a>
+                    <a href="{{ route('about-us-ikati') }}" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>IKATI</a>
                 </div>
             </details>
 
-            <a href="#" class="rounded-lg px-4 py-2 text-[18px] font-semibold leading-none text-white/95 transition hover:bg-white/10 hover:text-white">Artery</a>
+            <a href="{{ route('artery') }}" class="{{ $arteryActive ? 'rounded-lg bg-white/10 text-white px-4 py-2 text-[18px] font-semibold leading-none' : 'rounded-lg px-4 py-2 text-[18px] font-semibold leading-none text-white/95 transition hover:bg-white/10 hover:text-white' }}">Artery</a>
             <a href="#" class="rounded-lg px-4 py-2 text-[18px] font-semibold leading-none text-white/95 transition hover:bg-white/10 hover:text-white">Corner</a>
 
             <details class="group relative">
@@ -75,7 +76,7 @@
                     </div>
                 </details>
 
-                <a href="#" class="mt-2 block rounded-lg px-3 py-2 text-sm text-white/90 transition hover:bg-white/10">Artery</a>
+                <a href="{{ route('artery') }}" class="{{ $arteryActive ? 'mt-2 block rounded-lg bg-white/10 px-3 py-2 text-sm font-semibold text-white' : 'mt-2 block rounded-lg px-3 py-2 text-sm text-white/90 transition hover:bg-white/10' }}">Artery</a>
                 <a href="#" class="mt-1 block rounded-lg px-3 py-2 text-sm text-white/90 transition hover:bg-white/10">Corner</a>
 
                 <details class="group mt-2">
