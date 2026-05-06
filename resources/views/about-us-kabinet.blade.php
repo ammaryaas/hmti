@@ -1,8 +1,4 @@
-<x-layouts.app
-    title="Kabinet HMTI"
-    body-class="bg-white text-slate-900 antialiased"
-    active-nav="about"
->
+<div>
     <main>
         <section class="bg-white py-10">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -28,7 +24,7 @@
                     <div class="mx-auto max-w-4xl text-center">
                         <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">{{ $cabinet->name }}</h2>
                         <div class="mt-6 flex justify-center">
-                            <img src="{{ asset($cabinet->logo) }}" alt="Logo {{ $cabinet->name }}"
+                            <img src="{{ asset('storage/' . $cabinet->logo) }}" alt="Logo {{ $cabinet->name }}"
                                 class="h-28 w-28 object-contain sm:h-32 sm:w-32">
                         </div>
                     </div>
@@ -58,7 +54,7 @@
                                 class="flex gap-4 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory scrollbar-hide">
                                 @foreach ($cabinet->photo as $photo)
                                     <div class="snap-start shrink-0">
-                                        <img src="{{ asset($photo) }}" alt="Foto {{ $cabinet->name }}"
+                                        <img src="{{ asset('storage/' . $photo) }}" alt="Foto {{ $cabinet->name }}"
                                             class="h-52 w-60 rounded-2xl object-cover sm:h-60 sm:w-75 md:h-64 md:w-85">
                                     </div>
                                 @endforeach
@@ -71,4 +67,4 @@
             </section>
         @endforeach
     </main>
-</x-layouts.app>
+</div>

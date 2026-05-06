@@ -9,8 +9,8 @@
             <div class="pointer-events-none absolute -left-28 bottom-0 h-72 w-72 rounded-full bg-[#C98689]/20 blur-3xl"></div>
 
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="relative overflow-hidden rounded-[32px] border border-[#E6D6D6] bg-white/95 p-8 shadow-[0_30px_70px_rgba(181,55,55,0.12)] backdrop-blur-sm sm:p-12">
-                    <div class="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-[#B53737] via-[#C98689] to-transparent"></div>
+                <div class="relative overflow-hidden rounded-4xl border border-[#E6D6D6] bg-white/95 p-8 shadow-[0_30px_70px_rgba(181,55,55,0.12)] backdrop-blur-sm sm:p-12">
+                    <div class="absolute inset-y-0 left-0 w-1.5 bg-linear-to-b from-[#B53737] via-[#C98689] to-transparent"></div>
                     <div class="absolute right-10 top-10 h-24 w-24 rounded-full border border-[#B53737]/20 bg-white/60"></div>
 
                     <h1 class="relative text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Artery</h1>

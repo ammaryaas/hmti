@@ -53,13 +53,17 @@ class CabinetForm
 
                 FileUpload::make('logo')
                     ->label('Logo')
+                    ->disk('public')
+                    ->directory('cabinet')
                     ->required(),
 
                 FileUpload::make('photo')
                     ->label('Foto Kabinet')
                     ->multiple()
                     ->image()
-                    ->reorderable(),
+                    ->reorderable()
+                    ->disk('public')
+                    ->directory('cabinet'),
 
                 Radio::make('status')
                     ->label('Status')

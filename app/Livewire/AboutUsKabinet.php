@@ -11,10 +11,18 @@ class AboutUsKabinet extends Component
 {
     public string $tableName = 'cabinets';
 
-    public function render(): View
+    /**
+    * @return \Livewire\View
+    */
+    public function render()
     {
         return view('about-us-kabinet', [
             'cabinets' => $this->cabinetItems(),
+        ])
+        ->layout('layouts.app', [
+            'title' => 'Kabinet HMTI',
+            'bodyClass' => 'bg-white text-slate-900 antialiased',
+            'activeNav' => 'about',
         ]);
     }
 
