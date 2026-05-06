@@ -1,4 +1,4 @@
-<section class="bg-gradient-to-r from-[#B2534F] to-[#FFB7B4] py-6 sm:py-8 lg:py-10">
+<section class="bg-linear-to-r from-[#B2534F] to-[#FFB7B4] py-6 sm:py-8 lg:py-10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-20 ">
             <div class="cabinet-fade-up flex items-center justify-center ">

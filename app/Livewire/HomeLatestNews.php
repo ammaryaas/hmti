@@ -33,7 +33,7 @@ class HomeLatestNews extends Component
 
     public function render(): View
     {
-        $table = $this->resolveTableName();
+        $table = 'news';
         $totalNews = $this->totalNews();
         $newsItems = $this->currentNewsItems();
 
@@ -54,7 +54,7 @@ class HomeLatestNews extends Component
 
     private function totalNews(): int
     {
-        $table = $this->resolveTableName();
+        $table = 'news';
 
         if ($table === null) {
             return 0;
@@ -65,22 +65,14 @@ class HomeLatestNews extends Component
 
     private function currentNewsItems(): Collection
     {
-        $table = $this->resolveTableName();
-
-        if ($table === null) {
-            return collect();
-        }
+        $table = 'news';
 
         $columns = Schema::getColumnListing($table);
 
-        $titleColumn = $this->firstExistingColumn($columns, ['title', 'judul', 'name', 'nama']);
+        $titleColumn = 'title';
         $excerptColumn = $this->firstExistingColumn($columns, ['excerpt', 'ringkasan', 'summary', 'description', 'deskripsi', 'content', 'isi']);
-        $imageColumn = $this->firstExistingColumn($columns, ['thumbnail', 'image', 'gambar', 'cover', 'photo', 'foto']);
+        $imageColumn = 'image';
         $dateColumn = $this->firstExistingColumn($columns, ['published_at', 'created_at', 'updated_at', 'tanggal']);
-
-        if ($titleColumn === null) {
-            return collect();
-        }
 
         $query = DB::table($table)->select([
             'id',
@@ -106,25 +98,6 @@ class HomeLatestNews extends Component
 
                 return $item;
             });
-    }
-
-    private function resolveTableName(): ?string
-    {
-        if ($this->detectedTable !== null) {
-            return $this->detectedTable;
-        }
-
-        $candidateTables = ['beritas', 'berita', 'news', 'posts', 'articles'];
-
-        foreach ($candidateTables as $table) {
-            if (Schema::hasTable($table)) {
-                $this->detectedTable = $table;
-
-                return $this->detectedTable;
-            }
-        }
-
-        return null;
     }
 
     private function firstExistingColumn(array $columns, array $candidates): ?string

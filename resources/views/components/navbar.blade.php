@@ -6,7 +6,7 @@
     $arteryActive = $active === 'artery';
 @endphp
 
-<header class="fixed inset-x-0 top-0 z-[9999] border-b border-white/15 bg-[#B53737] shadow-lg">
+<header class="fixed inset-x-0 top-0 z-9999 border-b border-white/15 bg-[#B53737] shadow-lg">
     <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <div class="flex items-center gap-3 sm:gap-4">
             <img src="{{ asset('assets/logounsoed.png') }}" alt="Logo Universitas" class="h-10 w-10 object-contain sm:h-12 sm:w-12">
@@ -98,7 +98,7 @@
     </nav>
 </header>
 
-<div aria-hidden="true" class="h-16 sm:h-[72px]"></div>
+<div aria-hidden="true" class="h-16 sm:h-18"></div>
 
 <style>
     summary {

@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HMTI - Himpunan Mahasiswa Teknik Industri</title>
-
+@push('head')
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&display=swap" rel="stylesheet">
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @livewireStyles
 
     <style>
         .font-kameron {
             font-family: 'Kameron', serif;
         }
     </style>
-</head>
-<body class=" text-slate-900 antialiased bg-[#d8d3d3]">
-    <x-navbar active="home" />
+@endpush
 
+<x-layouts.app
+    title="HMTI - Himpunan Mahasiswa Teknik Industri"
+    body-class="text-slate-900 antialiased bg-[#d8d3d3]"
+    active-nav="home"
+>
     <section class="relative isolate min-h-screen overflow-hidden bg-[#B53737] text-white">
         <div class="absolute inset-0 -z-20 bg-[#B53737]"></div>
         <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(181,55,55,0.36)_0%,rgba(95,27,27,0.28)_45%,rgba(35,16,16,0.42)_100%)]"></div>
@@ -46,8 +40,4 @@
 
     <livewire:home-latest-news />
     <livewire:home-cabinet-highlight />
-    <x-footer />
-
-    @livewireScripts
-</body>
-</html>
+</x-layouts.app>

@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About Us - HMTI UNSOED</title>
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @livewireStyles
-</head>
-<body class="bg-white text-slate-900 antialiased">
-    <x-navbar active="about" />
-
+<x-layouts.app
+    title="About Us - HMTI UNSOED"
+    body-class="bg-white text-slate-900 antialiased"
+    active-nav="about"
+>
     <main>
         <section>
             <div class="bg-white py-6">
@@ -139,9 +131,4 @@
             </div>
         </section>
     </main>
-
-    <x-footer />
-
-    @livewireScripts
-</body>
-</html>
+</x-layouts.app>

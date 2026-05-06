@@ -1,6 +1,6 @@
 <section class="bg-[#d8d3d3] py-12 lg:py-16">
     <div class="mb-20">
-        <h2 class="inline-flex rounded-r-[24px] border border-black/70 border-l-0 bg-[#d8d3d3] px-10 py-2 text-3xl font-bold text-black shadow-[0_3px_6px_rgba(0,0,0,0.12)]">
+        <h2 class="inline-flex rounded-r-3xl border border-black/70 border-l-0 bg-[#d8d3d3] px-10 py-2 text-3xl font-bold text-black shadow-[0_3px_6px_rgba(0,0,0,0.12)]">
             Berita Terbaru
         </h2>
     </div>
@@ -42,7 +42,7 @@
                 <div wire:key="slide-{{ $currentPage }}" class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
                     @foreach ($newsItems as $news)
                         <article class="group overflow-hidden rounded-2xl border border-black/10 bg-white/70 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                            <div class="aspect-[16/10] overflow-hidden bg-zinc-200">
+                            <div class="aspect-16/10 overflow-hidden bg-zinc-200">
                                 @if ($news->image_url)
                                     <img
                                         src="{{ $news->image_url }}"

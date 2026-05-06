@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\AboutUsKabinet;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -7,9 +8,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('/about-us', 'about-us')->name('about-us');
-Route::view('/about-us-kabinet', 'about-us-kabinet')->name('about-us-kabinet');
-Route::view('/about-us-ikati', 'about-us-ikati')->name('about-us-ikati');
+Route::prefix('/about-us')->name('about-us')->group(function() {
+    Route::view('/', 'about-us');
+    Route::view('/ikati', 'about-us-ikati')->name('-ikati');
+    Route::get('/kabinet', AboutUsKabinet::class)->name('-kabinet');
+});
+    
 Route::view('/artery', 'artery')->name('artery');
 
 Route::view('dashboard', 'dashboard')
