@@ -38,6 +38,8 @@
             </div>
         </article>
     @empty
-        belum ada seminar terbaru
+        <div class="rounded-2xl border border-black/10 bg-white/70 px-6 py-10 text-center text-zinc-700">
+            Data seminar belum tersedia.
+        </div>
     @endforelse
 </div>

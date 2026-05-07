@@ -7,6 +7,7 @@
     $cornerActive = $active === 'corner';
     $eventActive = $active === 'seminar' || $active === 'wisudaan';
     $seminarActive = $active === 'seminar';
+    $wisudaActive = $active === 'wisudaan';
 @endphp
 
 <header class="fixed inset-x-0 top-0 z-9999 border-b border-white/15 bg-[#B53737] shadow-lg">
@@ -46,7 +47,7 @@
                 </summary>
                 <div class="pointer-events-none absolute right-0 top-full mt-2 w-44 overflow-hidden rounded-xl border border-white/20 bg-[#B53737] text-white opacity-0 shadow-2xl transition duration-200 ease-out group-open:pointer-events-auto group-open:opacity-100">
                     <a href="{{ route('seminar') }}" class="{{ $seminarActive ? 'block bg-white/10 px-4 py-2.5 text-sm font-semibold' : 'block px-4 py-2.5 text-sm transition hover:bg-white/10' }}" data-close-dropdown>Seminar</a>
-                    <a href="#" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>Wisudaan</a>
+                    <a href="{{ route('wisuda') }}" class="{{ $wisudaActive ? 'block bg-white/10 px-4 py-2.5 text-sm font-semibold' : 'block px-4 py-2.5 text-sm transition hover:bg-white/10' }}" data-close-dropdown>Wisudaan</a>
                 </div>
             </details>
         </div>
@@ -92,7 +93,7 @@
                     <div class="grid grid-rows-[0fr] transition-all duration-200 group-open:grid-rows-[1fr]">
                         <div class="overflow-hidden">
                             <a href="{{ route('seminar') }}" class="{{ $seminarActive ? 'mt-1 block rounded-lg bg-white/10 px-3 py-2 text-sm font-semibold text-white' : 'mt-1 block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10' }}" data-close-dropdown>Seminar</a>
-                            <a href="#" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>Wisudaan</a>
+                            <a href="{{ route('wisuda') }}" class="{{ $wisudaActive ? 'block rounded-lg bg-white/10 px-3 py-2 text-sm font-semibold text-white' : 'block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10' }}" data-close-dropdown>Wisudaan</a>
                         </div>
                     </div>
                 </details>

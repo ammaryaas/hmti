@@ -17,6 +17,7 @@ Route::prefix('/about-us')->name('about-us')->group(function() {
 Route::view('/artery', 'artery')->name('artery');
 Route::view('/corner', 'corner')->name('corner');
 Route::view('/seminar', 'seminar')->name('seminar');
+Route::view('/wisuda', 'wisuda')->name('wisuda');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
