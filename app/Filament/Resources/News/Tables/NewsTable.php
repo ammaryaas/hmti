@@ -23,6 +23,9 @@ class NewsTable
                         'draft' => 'gray',
                         'published' => 'success',
                     }),
+                TextColumn::make('published_at')
+                    ->label('published at')
+                    ->default('unpublished')
             ])
             ->filters([
                 //
