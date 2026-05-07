@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\AboutUsKabinet;
+use App\Livewire\NewsDetail;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -18,6 +19,7 @@ Route::view('/artery', 'artery')->name('artery');
 Route::view('/corner', 'corner')->name('corner');
 Route::view('/seminar', 'seminar')->name('seminar');
 Route::view('/wisuda', 'wisuda')->name('wisuda');
+Route::get('/news/{news:slug}', NewsDetail::class)->name('news.show');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

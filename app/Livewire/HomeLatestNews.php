@@ -76,6 +76,7 @@ class HomeLatestNews extends Component
 
         $query = DB::table($table)->select([
             'id',
+            'slug',
             DB::raw("`{$titleColumn}` as title"),
             $excerptColumn ? DB::raw("`{$excerptColumn}` as excerpt") : DB::raw('NULL as excerpt'),
             $imageColumn ? DB::raw("`{$imageColumn}` as image") : DB::raw('NULL as image'),
