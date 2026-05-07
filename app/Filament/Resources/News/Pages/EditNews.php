@@ -10,6 +10,11 @@ class EditNews extends EditRecord
 {
     protected static string $resource = NewsResource::class;
 
+    protected function getRedirectUrl(): ?string
+    {
+        return $this->getResource()::getUrl();
+    }
+
     protected function getHeaderActions(): array
     {
         return [

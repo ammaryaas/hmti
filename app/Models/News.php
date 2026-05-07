@@ -18,4 +18,20 @@ class News extends Model
         'status',
         'published_at',
     ];
+
+    protected static function booted(): void
+    {
+        static::saving(function ($news) {
+            if (
+                $news->status === 'published' &&
+                is_null($news->published_at)
+            ) {
+                $news->published_at = now();
+            }
+
+            if ($news->status !== 'published') {
+                $news->published_at = null;
+            }
+        });
+    }
 }

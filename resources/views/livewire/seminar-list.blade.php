@@ -1,5 +1,5 @@
 <div class="space-y-10">
-    @foreach ($seminars as $seminar)
+    @forelse ($seminars as $seminar)
         <article class="group relative overflow-hidden rounded-[28px] border border-white/10 shadow-[0_22px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.28)]">
             <div
                 class="absolute inset-0 bg-cover bg-center"
@@ -12,25 +12,32 @@
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
                     <div class="rounded-2xl bg-white/15 px-4 py-3 backdrop-blur-sm">
                         <p class="text-xs font-semibold uppercase tracking-widest text-white/75">Nama Mahasiswa</p>
-                        <p class="mt-2 text-lg font-semibold">{{ $seminar['student_name'] }}</p>
+                        <p class="mt-2 text-lg font-semibold">{{ $seminar->mahasiswa->nama }}</p>
                     </div>
                     <div class="rounded-2xl bg-white/15 px-4 py-3 backdrop-blur-sm">
                         <p class="text-xs font-semibold uppercase tracking-widest text-white/75">Tanggal Seminar</p>
-                        <p class="mt-2 text-lg font-semibold">{{ $seminar['date'] }}</p>
+                        <div class="flex justify-between">
+                            <p class="mt-2 text-lg font-semibold">{{ $seminar->schedule->translatedFormat('l, d M Y') }}</p>
+                            <p class="mt-2 text-lg font-semibold">{{ $seminar->schedule->format('H:i') }}</p>
+                        </div>
                     </div>
                     <div class="rounded-2xl bg-white/15 px-4 py-3 backdrop-blur-sm">
                         <p class="text-xs font-semibold uppercase tracking-widest text-white/75">Tempat Seminar</p>
-                        <p class="mt-2 text-lg font-semibold">{{ $seminar['location'] }}</p>
+                        <p class="mt-2 text-lg font-semibold">{{ $seminar->location }}</p>
                     </div>
                 </div>
 
                 <div class="mt-8 border-t border-white/20 pt-6">
-                    <p class="text-xs font-semibold uppercase tracking-widest text-white/75">Judul Seminar</p>
+                    <p class="{{ $seminar->type_color }} w-1/7 h-5 flex justify-center items-center rounded-md text-xs font-semibold uppercase tracking-widest text-white/75">
+                        {{ $seminar->type_label }}
+                    </p>
                     <h2 class="mt-3 text-2xl font-bold leading-snug sm:text-3xl">
-                        {{ $seminar['title'] }}
+                        {{ $seminar->title }}
                     </h2>
                 </div>
             </div>
         </article>
-    @endforeach
+    @empty
+        belum ada seminar terbaru
+    @endforelse
 </div>

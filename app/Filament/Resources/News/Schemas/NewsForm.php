@@ -37,6 +37,7 @@ class NewsForm
 
                 FileUpload::make('image')
                     ->label('Gambar')
+                    ->disk('public')
                     ->image()
                     ->directory('news-images'),
 

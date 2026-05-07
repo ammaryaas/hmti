@@ -14,9 +14,17 @@ class SeminarsTable
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
+                TextColumn::make('title')
+                    ->limit(30)
+                    ->tooltip(fn ($record) => $record->title),
                 TextColumn::make('mahasiswa.nama'),
-                TextColumn::make('type'),
+                TextColumn::make('type')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'internship' => 'gray',
+                        'proposal' => 'warning',
+                        'final' => 'success'
+                    }),
                 TextColumn::make('location'),
                 TextColumn::make('schedule')
                     ->dateTime('M j, Y H:i'),
