@@ -23,6 +23,9 @@ class GraduationForm
                 
                 FileUpload::make('photo')
                     ->label('Foto Wisuda')
+                    ->disk('public')
+                    ->directory('wisuda')
+                    ->image()
                     ->columnSpanFull()
             ]);
     }
