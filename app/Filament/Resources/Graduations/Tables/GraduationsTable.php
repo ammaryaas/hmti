@@ -15,7 +15,8 @@ class GraduationsTable
         return $table
             ->columns([
                 TextColumn::make('title'),
-                TextColumn::make('schedule'),
+                TextColumn::make('schedule')
+                    ->date('l, d M Y', 'Asia/Jakarta'),
                 TextColumn::make('mahasiswa_count')
                     ->label('Total Graduate')
                     ->counts('mahasiswa'),

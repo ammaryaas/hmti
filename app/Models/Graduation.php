@@ -16,6 +16,10 @@ class Graduation extends Model
         'mahasiwa',
     ];
 
+    protected $casts = [
+        'schedule' => 'date',
+    ];
+
     public function mahasiswa()
     {
         return $this->hasMany(Mahasiswa::class);
