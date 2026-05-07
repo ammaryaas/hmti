@@ -9,9 +9,6 @@
 				<h1 class="text-3xl font-bold text-slate-900 sm:text-4xl">
 					Wisudaan
 				</h1>
-				<div class="inline-flex w-fit items-center gap-2 rounded-full border border-black/10 bg-white/70 px-5 py-2 text-base font-semibold text-slate-800 shadow-sm">
-					Hari/Tanggal : Jumat, 12 Agustus 2026
-				</div>
 			</div>
 
 			<livewire:wisuda-page />
