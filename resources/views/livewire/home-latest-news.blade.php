@@ -41,7 +41,11 @@
             @else
                 <div wire:key="slide-{{ $currentPage }}" class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
                     @foreach ($newsItems as $news)
-                        <article class="group overflow-hidden rounded-2xl border border-black/10 bg-white/70 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <a
+                            href="{{ route('news.show', $news->slug) }}"
+                            class="group overflow-hidden rounded-2xl border border-black/10 bg-white/70 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                            aria-label="{{ $news->title }}"
+                        >
                             <div class="aspect-16/10 overflow-hidden bg-zinc-200">
                                 @if ($news->image_url)
                                     <img
@@ -67,7 +71,7 @@
                                     </p>
                                 @endif
                             </div>
-                        </article>
+                        </a>
                     @endforeach
                 </div>
             @endif

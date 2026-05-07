@@ -5,7 +5,11 @@
 @else
     <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
         @foreach ($newsItems as $news)
-            <article class="group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <a
+                href="{{ route('news.show', $news->slug) }}"
+                class="group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                aria-label="{{ $news->title }}"
+            >
                 <div class="aspect-16/10 overflow-hidden bg-zinc-200">
                     @if ($news->image)
                         <img
@@ -25,7 +29,7 @@
                         {{ $news->title }}
                     </h3>
                 </div>
-            </article>
+            </a>
         @endforeach
     </div>
 @endif
