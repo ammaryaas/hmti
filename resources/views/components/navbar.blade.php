@@ -4,6 +4,9 @@
     $homeActive = $active === 'home';
     $aboutActive = $active === 'about';
     $arteryActive = $active === 'artery';
+    $cornerActive = $active === 'corner';
+    $eventActive = $active === 'seminar' || $active === 'wisudaan';
+    $seminarActive = $active === 'seminar';
 @endphp
 
 <header class="fixed inset-x-0 top-0 z-9999 border-b border-white/15 bg-[#B53737] shadow-lg">
@@ -32,17 +35,17 @@
             </details>
 
             <a href="{{ route('artery') }}" class="{{ $arteryActive ? 'rounded-lg bg-white/10 text-white px-4 py-2 text-[18px] font-semibold leading-none' : 'rounded-lg px-4 py-2 text-[18px] font-semibold leading-none text-white/95 transition hover:bg-white/10 hover:text-white' }}">Artery</a>
-            <a href="#" class="rounded-lg px-4 py-2 text-[18px] font-semibold leading-none text-white/95 transition hover:bg-white/10 hover:text-white">Corner</a>
+            <a href="{{ route('corner') }}" class="{{ $cornerActive ? 'rounded-lg bg-white/10 text-white px-4 py-2 text-[18px] font-semibold leading-none' : 'rounded-lg px-4 py-2 text-[18px] font-semibold leading-none text-white/95 transition hover:bg-white/10 hover:text-white' }}">Corner</a>
 
             <details class="group relative">
-                <summary class="flex cursor-pointer items-center gap-2 rounded-lg px-4 py-2 text-[18px] font-semibold leading-none text-white/95 transition hover:bg-white/10 hover:text-white">
+                <summary class="{{ $eventActive ? 'flex cursor-pointer items-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-[18px] font-semibold leading-none text-white' : 'flex cursor-pointer items-center gap-2 rounded-lg px-4 py-2 text-[18px] font-semibold leading-none text-white/95 transition hover:bg-white/10 hover:text-white' }}">
                     Event
                     <svg class="h-4 w-4 transition duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.51a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                     </svg>
                 </summary>
                 <div class="pointer-events-none absolute right-0 top-full mt-2 w-44 overflow-hidden rounded-xl border border-white/20 bg-[#B53737] text-white opacity-0 shadow-2xl transition duration-200 ease-out group-open:pointer-events-auto group-open:opacity-100">
-                    <a href="#" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>Seminar</a>
+                    <a href="{{ route('seminar') }}" class="{{ $seminarActive ? 'block bg-white/10 px-4 py-2.5 text-sm font-semibold' : 'block px-4 py-2.5 text-sm transition hover:bg-white/10' }}" data-close-dropdown>Seminar</a>
                     <a href="#" class="block px-4 py-2.5 text-sm transition hover:bg-white/10" data-close-dropdown>Wisudaan</a>
                 </div>
             </details>
@@ -77,10 +80,10 @@
                 </details>
 
                 <a href="{{ route('artery') }}" class="{{ $arteryActive ? 'mt-2 block rounded-lg bg-white/10 px-3 py-2 text-sm font-semibold text-white' : 'mt-2 block rounded-lg px-3 py-2 text-sm text-white/90 transition hover:bg-white/10' }}">Artery</a>
-                <a href="#" class="mt-1 block rounded-lg px-3 py-2 text-sm text-white/90 transition hover:bg-white/10">Corner</a>
+                <a href="{{ route('corner') }}" class="{{ $cornerActive ? 'mt-1 block rounded-lg bg-white/10 px-3 py-2 text-sm font-semibold text-white' : 'mt-1 block rounded-lg px-3 py-2 text-sm text-white/90 transition hover:bg-white/10' }}">Corner</a>
 
                 <details class="group mt-2">
-                    <summary class="flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-sm text-white/90 transition hover:bg-white/10">
+                    <summary class="{{ $eventActive ? 'flex cursor-pointer items-center justify-between rounded-lg bg-white/10 px-3 py-2 text-sm font-semibold text-white' : 'flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-sm text-white/90 transition hover:bg-white/10' }}">
                         Event
                         <svg class="h-4 w-4 transition duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.51a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -88,7 +91,7 @@
                     </summary>
                     <div class="grid grid-rows-[0fr] transition-all duration-200 group-open:grid-rows-[1fr]">
                         <div class="overflow-hidden">
-                            <a href="#" class="mt-1 block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>Seminar</a>
+                            <a href="{{ route('seminar') }}" class="{{ $seminarActive ? 'mt-1 block rounded-lg bg-white/10 px-3 py-2 text-sm font-semibold text-white' : 'mt-1 block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10' }}" data-close-dropdown>Seminar</a>
                             <a href="#" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>Wisudaan</a>
                         </div>
                     </div>
