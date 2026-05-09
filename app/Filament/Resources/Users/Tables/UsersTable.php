@@ -16,7 +16,13 @@ class UsersTable
             ->columns([
                 TextColumn::make('email'),
                 TextColumn::make('name'),
-                // TextColumn::make('role.name'),
+                TextColumn::make('roles.name')
+                    ->badge()
+                    ->formatStateUsing(fn ($state) => str($state)
+                        ->replace('_', ' ')
+                        ->title()
+                    )
+                    ->default('unassigned'),
             ])
             ->filters([
                 //

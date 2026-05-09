@@ -52,6 +52,7 @@
             </details>
         </div>
 
+        {{-- Mobile Nav --}}
         <details class="group relative lg:hidden">
             <summary class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-white/25 bg-white/10 text-white transition hover:bg-white/20">
                 <svg class="h-5 w-5 group-open:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">

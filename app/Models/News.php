@@ -19,6 +19,10 @@ class News extends Model
         'published_at',
     ];
 
+    protected $casts = [
+        'published_at' => 'datetime'
+    ];
+
     protected static function booted(): void
     {
         static::saving(function ($news) {

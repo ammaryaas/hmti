@@ -42,7 +42,7 @@
                 <div wire:key="slide-{{ $currentPage }}" class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
                     @foreach ($newsItems as $news)
                         <a
-                            href="{{ route('news.show', $news->slug) }}"
+                            href="{{ route('corner.show', $news->slug) }}"
                             class="group overflow-hidden rounded-2xl border border-black/10 bg-white/70 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
                             aria-label="{{ $news->title }}"
                         >
