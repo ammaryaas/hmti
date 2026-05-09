@@ -3,7 +3,6 @@
 use App\Livewire\AboutUsKabinet;
 use App\Livewire\NewsDetail;
 use Illuminate\Support\Facades\Route;
-use Livewire\Volt\Volt;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,23 +13,14 @@ Route::prefix('/about-us')->name('about-us')->group(function() {
     Route::view('/ikati', 'about-us-ikati')->name('-ikati');
     Route::get('/kabinet', AboutUsKabinet::class)->name('-kabinet');
 });
-    
-Route::view('/artery', 'artery')->name('artery');
-Route::view('/corner', 'corner')->name('corner');
+
+Route::prefix('/corner')->name('corner')->group(function() {
+    Route::view('/', 'corner');
+    Route::get('/{slug}', NewsDetail::class)->name('.show');
+});
+
 Route::view('/seminar', 'seminar')->name('seminar');
 Route::view('/wisuda', 'wisuda')->name('wisuda');
-Route::get('/news/{news:slug}', NewsDetail::class)->name('news.show');
-
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
-
-Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
-
-    Volt::route('settings/profile', 'settings.profile')->name('settings.profile');
-    Volt::route('settings/password', 'settings.password')->name('settings.password');
-    Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
-});
+Route::view('/artery', 'artery')->name('artery');
 
 require __DIR__.'/auth.php';

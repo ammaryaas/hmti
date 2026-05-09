@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -11,9 +12,18 @@ class UserForm
     {
         return $schema
             ->components([
-                TextInput::make('email'),
+                TextInput::make('email')
+                    ->unique()
+                    ->validationMessages([
+                        'unique' => 'This attribute has already exist'
+                    ])
+                    ->required(),
                 TextInput::make('name'),
-                TextInput::make('password'),
+                Select::make('roles')
+                    ->multiple()
+                    ->relationship('roles', 'name')
+                    ->preload()
+                    ->searchable(),
             ]);
     }
 }
