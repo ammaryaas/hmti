@@ -13,7 +13,7 @@
         <section class="bg-[#E9E2E2] py-10">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
-                    <div class="space-y-5 text-justify text-base leading-relaxed text-slate-800 sm:text-lg">
+                    <div class="order-2 space-y-5 text-justify text-base leading-relaxed text-slate-800 sm:order-1 sm:text-lg">
                         <p>
                             IKATI (Ikatan Alumni Teknik Industri Unsoed) hadir untuk menghubungkan kembali,
                             memperkuat jaringan, dan membuka peluang kolaborasi antar alumni Teknik Industri
@@ -24,7 +24,7 @@
                             keseimbangan antara manusia, sistem, dan teknologi, dengan semangat Unity Beyond Infinity.
                         </p>
                     </div>
-                    <div class="flex justify-center lg:justify-end">
+                    <div class="order-1 flex justify-center sm:order-2 lg:justify-end">
                         <img
                             src="{{ asset('assets/logoikati.png') }}"
                             alt="Logo IKATI"

@@ -75,8 +75,8 @@
                     <div class="grid grid-rows-[0fr] transition-all duration-200 group-open:grid-rows-[1fr]">
                         <div class="overflow-hidden">
                             <a href="{{ route('about-us') }}" class="mt-1 block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>HMTI</a>
-                            <a href="#" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>Kabinet</a>
-                            <a href="#" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>IKATI</a>
+                            <a href="{{ route('about-us-kabinet') }}" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>Kabinet</a>
+                            <a href="{{ route('about-us-ikati') }}" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>IKATI</a>
                         </div>
                     </div>
                 </details>
