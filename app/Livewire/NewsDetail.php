@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\News;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 use function Livewire\Volt\layout;
@@ -20,6 +21,11 @@ class NewsDetail extends Component
     public function render(): View
     {
         return view('livewire.news-detail')
-            ->layout('layouts.app');
+            ->layout('layouts.app',[
+                'title' => $this->news->title . ' - HMTI',
+                'bodyClass' => 'text-slate-900 antialiased bg-[#d8d3d3]',
+                'activeNav' => 'corner',
+                'description' => Str::limit(strip_tags($this->news->content), 150),
+                ]);
     }
 }

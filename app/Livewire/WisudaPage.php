@@ -12,7 +12,7 @@ class WisudaPage extends Component
     {
         return view('livewire.wisuda-page', [
             'graduates' => Graduation::with('mahasiswa')
-                ->where('schedule', '>=', today())
+                ->where('schedule', '<=', today())
                 ->orderBy('schedule')
                 ->first()
         ]);

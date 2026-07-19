@@ -5,7 +5,7 @@ namespace App\Filament\Pages;
 use App\Filament\Widgets\RecentGraduation;
 use App\Filament\Widgets\RecentSeminar;
 use Filament\Pages\Dashboard as BaseDashboard;
-use App\Filament\Widgets\TotalCorner;
+use App\Filament\Widgets\DashboardStats;
 
 class Dashboard extends BaseDashboard
 {
@@ -14,7 +14,7 @@ class Dashboard extends BaseDashboard
     public function getHeaderWidgets(): array
     {
         return [
-            TotalCorner::class,
+            DashboardStats::class,
             RecentSeminar::class,
             RecentGraduation::class,
         ];

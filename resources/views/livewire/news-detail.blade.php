@@ -1,7 +1,8 @@
 <div
     title="{{ $news->title }} - HMTI"
+    description="Str::limit(strip_tags($news->content), 150)"
     body-class="text-slate-900 antialiased bg-[#d8d3d3]"
-    active-nav=""
+    active-nav="corner"
 >
 
     <section class="bg-[#d8d3d3] pb-14 pt-4 sm:pb-16 lg:pb-20">

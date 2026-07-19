@@ -55,7 +55,7 @@
                                 @foreach ($cabinet->photo as $photo)
                                     <div class="snap-start shrink-0">
                                         <img src="{{ asset('storage/' . $photo) }}" alt="Foto {{ $cabinet->name }}"
-                                            class="h-52 w-60 rounded-2xl object-cover sm:h-60 sm:w-75 md:h-64 md:w-85">
+                                            class="h-52 w-60 rounded-xl object-cover sm:h-60 sm:w-75 md:h-64 md:w-85">
                                     </div>
                                 @endforeach
                             </div>

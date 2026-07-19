@@ -2,6 +2,7 @@
     title="About Us - HMTI UNSOED"
     body-class="bg-white text-slate-900 antialiased"
     active-nav="about"
+    description="HMTI Unsoed adalah sebuah organisasi yang menghimpun, menampung, serta berusaha merealisasikan aspirasi mahasiswa Jurusan Teknik Industri Universitas Jenderal Soedirman berdasarkan asas dan sifat yang ditetapkan."
 >
     <main>
         <section>

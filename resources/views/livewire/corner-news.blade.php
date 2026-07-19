@@ -5,7 +5,7 @@
 @else
     <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
         @foreach ($newsItems as $news)
-            <a href="{{ route('corner.show', $news->slug) }}"
+            <a href="{{ route('corner-show', $news->slug) }}"
                 wire:navigate
                 class="group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-xl"
                 aria-label="{{ $news->title }}">
