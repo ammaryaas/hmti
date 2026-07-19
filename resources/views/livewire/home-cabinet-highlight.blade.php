@@ -6,6 +6,7 @@
                     src="{{ asset('assets/konten3.png') }}"
                     alt="Dokumentasi kegiatan kabinet HMTI"
                     class="h-auto w-full object-contain transition duration-500 hover:scale-[1.02]"
+                    loading="lazy"
                 >
             </div>
 

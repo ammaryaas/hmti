@@ -29,10 +29,10 @@
                                 <x-heroicon-o-envelope class="h-5 w-5" />
                                 hmti@unsoed.ac.id
                             </a>
-                            <a href="tel:081286928223"
+                            <a href="https://wa.me/6282122090983" target="_blank"
                                 class="flex items-center gap-3 text-white/95 hover:text-white whitespace-nowrap">
                                 <x-heroicon-o-phone class="h-5 w-5" />
-                                081286928223
+                                082122090983 (Jalu)
                             </a>
                         </div>
                     </div>
@@ -43,47 +43,15 @@
                             class="group inline-flex items-center gap-1 transition-colors hover:text-white">
                             <span
                                 class="-translate-x-1.5 translate-y-1 opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
-                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5.22 14.78a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0l.75.75a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-.75-.75z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M9 5.75a.75.75 0 0 1 .75-.75H15a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V7.56l-4.72 4.72a.75.75 0 0 1-1.06-1.06l4.72-4.72H9.75A.75.75 0 0 1 9 5.75z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                                <x-heroicon-o-arrow-up-right class="h-5 w-5"/>
                             </span>
                             <span class="transition-transform duration-500 ease-out group-hover:translate-x-3">Home</span>
-                        </a>
-                        <a href="{{ route('artery') }}}"
-                            class="group inline-flex items-center gap-1 transition-colors hover:text-white">
-                            <span
-                                class="-translate-x-1.5 translate-y-1 opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
-                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5.22 14.78a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0l.75.75a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-.75-.75z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M9 5.75a.75.75 0 0 1 .75-.75H15a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V7.56l-4.72 4.72a.75.75 0 0 1-1.06-1.06l4.72-4.72H9.75A.75.75 0 0 1 9 5.75z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </span>
-                            <span class="transition-transform duration-500 ease-out group-hover:translate-x-3">Artery</span>
                         </a>
                         <a href="{{ route('about-us') }}"
                             class="group inline-flex items-center gap-1 transition-colors hover:text-white">
                             <span
                                 class="-translate-x-1.5 translate-y-1 opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
-                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5.22 14.78a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0l.75.75a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-.75-.75z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M9 5.75a.75.75 0 0 1 .75-.75H15a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V7.56l-4.72 4.72a.75.75 0 0 1-1.06-1.06l4.72-4.72H9.75A.75.75 0 0 1 9 5.75z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                                <x-heroicon-o-arrow-up-right class="h-5 w-5"/>
                             </span>
                             <span class="transition-transform duration-500 ease-out group-hover:translate-x-3">HMTI</span>
                         </a>
@@ -91,15 +59,7 @@
                             class="group inline-flex items-center gap-1 transition-colors hover:text-white">
                             <span
                                 class="-translate-x-1.5 translate-y-1 opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
-                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5.22 14.78a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0l.75.75a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-.75-.75z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M9 5.75a.75.75 0 0 1 .75-.75H15a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V7.56l-4.72 4.72a.75.75 0 0 1-1.06-1.06l4.72-4.72H9.75A.75.75 0 0 1 9 5.75z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                                <x-heroicon-o-arrow-up-right class="h-5 w-5"/>
                             </span>
                             <span class="transition-transform duration-500 ease-out group-hover:translate-x-3">Corner</span>
                         </a>
@@ -107,15 +67,7 @@
                             class="group inline-flex items-center gap-1 transition-colors hover:text-white">
                             <span
                                 class="-translate-x-1.5 translate-y-1 opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
-                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5.22 14.78a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0l.75.75a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-.75-.75z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M9 5.75a.75.75 0 0 1 .75-.75H15a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V7.56l-4.72 4.72a.75.75 0 0 1-1.06-1.06l4.72-4.72H9.75A.75.75 0 0 1 9 5.75z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                                <x-heroicon-o-arrow-up-right class="h-5 w-5"/>
                             </span>
                             <span class="transition-transform duration-500 ease-out group-hover:translate-x-3">Kabinet</span>
                         </a>
@@ -123,15 +75,7 @@
                             class="group inline-flex items-center gap-1 transition-colors hover:text-white">
                             <span
                                 class="-translate-x-1.5 translate-y-1 opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
-                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5.22 14.78a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0l.75.75a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-.75-.75z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M9 5.75a.75.75 0 0 1 .75-.75H15a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V7.56l-4.72 4.72a.75.75 0 0 1-1.06-1.06l4.72-4.72H9.75A.75.75 0 0 1 9 5.75z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                                <x-heroicon-o-arrow-up-right class="h-5 w-5"/>
                             </span>
                             <span class="transition-transform duration-500 ease-out group-hover:translate-x-3">Seminar</span>
                         </a>
@@ -139,15 +83,7 @@
                             class="group inline-flex items-center gap-1 transition-colors hover:text-white">
                             <span
                                 class="-translate-x-1.5 translate-y-1 opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
-                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5.22 14.78a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0l.75.75a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-.75-.75z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M9 5.75a.75.75 0 0 1 .75-.75H15a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V7.56l-4.72 4.72a.75.75 0 0 1-1.06-1.06l4.72-4.72H9.75A.75.75 0 0 1 9 5.75z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                                <x-heroicon-o-arrow-up-right class="h-5 w-5"/>
                             </span>
                             <span class="transition-transform duration-500 ease-out group-hover:translate-x-3">IKATI</span>
                         </a>
@@ -155,15 +91,7 @@
                             class="group inline-flex items-center gap-1 transition-colors hover:text-white">
                             <span
                                 class="-translate-x-1.5 translate-y-1 opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
-                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5.22 14.78a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0l.75.75a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-.75-.75z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M9 5.75a.75.75 0 0 1 .75-.75H15a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V7.56l-4.72 4.72a.75.75 0 0 1-1.06-1.06l4.72-4.72H9.75A.75.75 0 0 1 9 5.75z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                                <x-heroicon-o-arrow-up-right class="h-5 w-5"/>
                             </span>
                             <span class="transition-transform duration-500 ease-out group-hover:translate-x-3">Wisuda</span>
                         </a>
@@ -201,7 +129,7 @@
                                 d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z" />
                         </svg>
                     </a>
-                    <a href="#" target="_blank" aria-label="LinkedIn" class="transition duration-300 ease-out hover:scale-110 hover:text-white">
+                    <a href="https://www.linkedin.com/groups/18133055/" target="_blank" aria-label="LinkedIn" class="transition duration-300 ease-out hover:scale-110 hover:text-white">
                         <svg class="h-3.5 w-3.5 sm:h-5 sm:w-5" viewBox="0 0 24 24" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path

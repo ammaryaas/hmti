@@ -31,11 +31,11 @@ class CabinetForm
 
                 Repeater::make('mission')
                     ->label('Misi')
-                    ->schema([
+                    ->simple(
                         Textarea::make('mission')
                             ->hiddenLabel()
                             ->rows(2)
-                    ])
+                    )
                     ->addAction(
                         fn($action) => $action
                             ->label('')
@@ -77,7 +77,7 @@ class CabinetForm
                 Select::make('period')
                     ->label('Tahun')
                     ->options(
-                        collect(range(2020, date('Y')))
+                        collect(range(2015, date('Y')))
                             ->mapWithKeys(fn($year) => [$year => $year])
                             ->toArray()
                     )

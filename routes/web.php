@@ -3,6 +3,7 @@
 use App\Livewire\AboutUsKabinet;
 use App\Livewire\NewsDetail;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,11 +17,10 @@ Route::prefix('/about-us')->name('about-us')->group(function() {
 
 Route::prefix('/corner')->name('corner')->group(function() {
     Route::view('/', 'corner');
-    Route::get('/{slug}', NewsDetail::class)->name('.show');
+    Route::get('/{slug}', NewsDetail::class)->name('-show');
 });
 
 Route::view('/seminar', 'seminar')->name('seminar');
 Route::view('/wisuda', 'wisuda')->name('wisuda');
-Route::view('/artery', 'artery')->name('artery');
 
 require __DIR__.'/auth.php';
