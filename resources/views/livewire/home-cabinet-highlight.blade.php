@@ -21,7 +21,7 @@
 
                 <div class="mt-8 flex justify-center">
                     <a
-                        href="{{ url('/about-us/kabinet') }}"
+                        href="{{ url('/about-us/struktur') }}"
                         class="inline-flex rounded-full bg-[#D9D9D9]/90 px-9 py-3 text-lg font-extrabold text-white transition duration-300 hover:scale-105 hover:bg-[#ececec]"
                     >
                         Lihat Selengkapnya
