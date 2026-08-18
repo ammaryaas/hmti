@@ -18,6 +18,7 @@ Route::prefix('/about-us')->name('about-us')->group(function() {
 
 Route::prefix('/corner')->name('corner')->group(function() {
     Route::view('/', 'corner');
+    Route::view('/apresiasi', 'apresiasi')->name('-apresiasi');
     Route::get('/{slug}', NewsDetail::class)->name('-show');
 });
 
