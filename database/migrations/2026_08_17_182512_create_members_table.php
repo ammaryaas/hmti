@@ -11,17 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cabinets', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('logo');
-            $table->text('vision');
-            $table->json('mission');
-            $table->json('photo')->nullable();
-            $table->enum('status', ['active', 'inactive']);
-            $table->year('period');
+            $table->foreignId('mahasiswa_id')->constrained()->onDelete('cascade');
+            $table->foreignId('division_id')->constrained()->onDelete('cascade');
+            $table->string('position');
+            $table->string('photo');
             $table->timestamps();
-
         });
     }
 
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cabinets');
+        Schema::dropIfExists('members');
     }
 };

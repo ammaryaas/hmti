@@ -11,17 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cabinets', function (Blueprint $table) {
+        Schema::create('divisions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('cabinet_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('logo');
-            $table->text('vision');
-            $table->json('mission');
-            $table->json('photo')->nullable();
-            $table->enum('status', ['active', 'inactive']);
-            $table->year('period');
+            $table->text('desc');
+            $table->string('image');
+            $table->unsignedInteger('sort_order')->default(0);
             $table->timestamps();
-
         });
     }
 
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cabinets');
+        Schema::dropIfExists('divisions');
     }
 };

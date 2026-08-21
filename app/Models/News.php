@@ -12,6 +12,7 @@ class News extends Model
     protected $fillable = [
         'title',
         'slug',
+        'news_category_id',
         'content',
         'content',
         'image',
@@ -22,6 +23,11 @@ class News extends Model
     protected $casts = [
         'published_at' => 'datetime'
     ];
+
+    public function news_category()
+    {
+        return $this->belongsTo(NewsCategory::class);
+    }
 
     protected static function booted(): void
     {
