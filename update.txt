@@ -1,0 +1,20 @@
+BE
+- bikin CRUD event
+- harus dipastiin struktur mau dinamis apa gimana
+- corners tambahin kategori
+- benerin max input text visi
+- benerin visibilitas wisudaan (max berapa minggu)
+
+FE
+- data center (page baru)
+- struktur kabinet (page baru)
+- event (page baru)
+- update tampilan home
+- tambahin struktur kepengurusan di about us/hmti
+- update tampilan kabinet
+- tambahin back to top di kabinet
+- tambahin tampilan buat kategori apresiasi di corners
+
+KONFIRMASI
+- corner gimana
+- double struktur di about us

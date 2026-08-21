@@ -23,7 +23,7 @@ class NewsResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedNewspaper;
 
-    protected static string | UnitEnum | null $navigationGroup = 'Data';
+    protected static string | UnitEnum | null $navigationGroup = 'Content';
 
     public static function form(Schema $schema): Schema
     {

@@ -23,7 +23,7 @@ class CabinetResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Cabinet';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Data';
+    protected static string | UnitEnum | null $navigationGroup = 'Organization';
 
     public static function form(Schema $schema): Schema
     {
