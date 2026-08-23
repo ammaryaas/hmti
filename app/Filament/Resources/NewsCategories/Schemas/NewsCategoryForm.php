@@ -29,6 +29,7 @@ class NewsCategoryForm
                 Toggle::make('is_active')
                     ->label('Status')
                     ->helperText('adjust to change category visibility')
+                    ->default(true)
                     ->inline(false),
             ]);
     }

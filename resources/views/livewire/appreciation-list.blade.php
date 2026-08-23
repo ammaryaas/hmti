@@ -26,16 +26,16 @@
                 <div class="mt-auto">
                     <p class="text-[13px] sm:text-sm font-semibold text-black mb-1.5">Delegasi :</p>
                     <ul class="list-disc list-inside text-[13px] sm:text-sm text-black ml-1 space-y-0.5">
-                        @if ($item->mahasiswa)
+                        @forelse ($item->mahasiswa as $mhs)
                             <li>
-                                {{ $item->mahasiswa->nama }}
-                                @if ($item->mahasiswa->angkatan)
-                                    ({{ $item->mahasiswa->angkatan }})
+                                {{ $mhs->nama }}
+                                @if ($mhs->angkatan)
+                                    ({{ $mhs->angkatan }})
                                 @endif
                             </li>
-                        @else
+                        @empty
                             <li class="italic text-zinc-500">-</li>
-                        @endif
+                        @endforelse
                     </ul>
                 </div>
             </div>

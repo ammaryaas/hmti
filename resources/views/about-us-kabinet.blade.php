@@ -4,7 +4,7 @@
     </style>
     <main>
 
-        <section class="bg-white py-10">
+        <section class="bg-white py-10" id="top">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h1 class="text-center text-3xl font-bold text-slate-900 sm:text-4xl">Kabinet HMTI</h1>
                 <p class="mt-3 text-center text-base text-slate-600 sm:text-lg">
@@ -30,7 +30,7 @@
                     <div class="relative mx-auto max-w-4xl text-center">
                         <h2 class="text-3xl font-bold italic text-slate-900 sm:text-4xl">{{ $cabinet->name }}</h2>
                         @if (!$loop->first)
-                            <a href="#{{ $cabinets[0]->id }}" 
+                            <a href="#top" 
                                class="absolute right-0 top-1/2 -translate-y-1/2 rounded-md bg-[#A55E5E] px-4 py-2 text-sm font-bold tracking-widest text-white shadow-sm transition hover:bg-[#8F4F4F] sm:text-base">
                                 UP
                             </a>

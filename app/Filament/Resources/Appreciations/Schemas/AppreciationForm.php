@@ -37,36 +37,6 @@ class AppreciationForm
                     ->required()
                     ->columnSpanFull(),
 
-                Section::make('Mahasiswa Delegasi')
-                    ->columnSpanFull()
-                    ->schema([
-                        Select::make('mahasiswa_id')
-                            ->hiddenLabel()
-                            ->placeholder('Pilih Mahasiswa / Cari NIM')
-                            ->options(Mahasiswa::pluck('NIM', 'id'))
-                            ->searchable()
-                            ->preload()
-                            ->live()
-                            ->afterStateUpdated(function (Set $set, ?string $state) {
-                                $mhs = Mahasiswa::find($state);
-                                $set('nama', $mhs?->nama ?? null);
-                                $set('angkatan', (string) ($mhs?->angkatan ?? ''));
-                                $set('foto', $mhs?->foto ?? null);
-                            })
-                            ->afterStateHydrated(function (Set $set, ?string $state) {
-                                $mhs = Mahasiswa::find($state);
-                                $set('nama', $mhs?->nama ?? null);
-                                $set('angkatan', (string) ($mhs?->angkatan ?? ''));
-                                $set('foto', $mhs?->foto ?? null);
-                            })
-                            ->required()
-                            ->validationMessages([
-                                'required' => 'Mahasiswa delegasi wajib dipilih',
-                            ]),
-
-                        BioMahasiswa::make()
-                            ->visible(fn (Get $get): bool => filled($get('mahasiswa_id'))),
-                    ]),
             ]);
     }
 }

@@ -13,7 +13,6 @@ class Graduation extends Model
         'title',
         'schedule',
         'photo',
-        'mahasiwa',
     ];
 
     protected $casts = [

@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->foreignId('news_category_id')->nullable()->constrained()->onDelete('set null');
             $table->longText('content');
             $table->string('image')->nullable();
-            $table->json('collection')->nullable();
             $table->enum('status', ['draft', 'published',])->default('draft');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

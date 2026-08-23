@@ -25,6 +25,8 @@ class StudentInfoResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Data';
 
+    protected static ?int $navigationSort = 5;
+
     public static function form(Schema $schema): Schema
     {
         return StudentInfoForm::configure($schema);

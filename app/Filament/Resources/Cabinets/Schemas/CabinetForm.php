@@ -21,12 +21,14 @@ class CabinetForm
             ->components([
                 TextInput::make('name')
                     ->label('Nama Kabinet')
+                    ->placeholder('Sinkronisasi')
                     ->columnSpanFull()
                     ->unique()
                     ->required(),
 
                 Textarea::make('vision')
                     ->label('Visi')
+                    ->placeholder('Mewujudkan HMTI Unsoed yang harmonis...')
                     ->rows(2)
                     ->columnSpanFull()
                     ->required(),
@@ -36,6 +38,7 @@ class CabinetForm
                     ->simple(
                         Textarea::make('mission')
                             ->hiddenLabel()
+                            ->placeholder('Membangun harmoni dan kekeluargaan internal HMTI...')
                             ->rows(2)
                     )
                     ->addAction(

@@ -29,13 +29,16 @@ class DivisionForm
                     ->placeholder('Divisi yang bertanggung jawab atas...')
                     ->required(),
                 FileUpload::make('image')
+                    ->image()
                     ->disk('public')
-                    ->directory('division'),
+                    ->directory('division')
+                    ->required(),
                 TextInput::make('sort_order')
                     ->placeholder('1')
                     ->helperText('Help you manage the display order.')
                     ->numeric()
                     ->minValue(1)
+                    ->required()
             ]);
     }
 }

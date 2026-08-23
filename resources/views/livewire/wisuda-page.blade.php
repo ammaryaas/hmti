@@ -10,15 +10,14 @@
         </h1>
 
         <div class="relative overflow-hidden min-h-80 rounded-[28px] shadow-[0_22px_45px_rgba(0,0,0,0.22)]">
-            @if ($graduates->foto)
-                <img src="{{ 'storage/' . $graduates->foto }}" alt="Foto Bersama Wisuda"
+            @if ($graduates->photo)
+                <img src="{{ 'storage/' . $graduates->photo }}" alt="Foto Bersama Wisuda"
                     class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
             @else
                 <div class="flex flex-col items-center justify-center h-full w-full min-h-80 bg-linear-to-br from-slate-100 to-slate-200 transition duration-300 group-hover:scale-[1.03]">
                     <div class="rounded-full bg-white/70 p-5 mb-3 shadow-sm">
                         <x-heroicon-o-photo class="h-12 w-12 text-slate-400"/>
                     </div>
-                    <!--<x-heroicon-s-photo class="h-20 w-20 text-sm text-slate-400" />-->
                 </div>
             @endif
             <div class="absolute inset-0 bg-linear-to-t from-black/55 via-black/10 to-transparent" aria-hidden="true"></div>

@@ -27,6 +27,8 @@ class MahasiswaResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Data';
 
+    protected static ?int $navigationSort = 1;
+
     public static function form(Schema $schema): Schema
     {
         return MahasiswaForm::configure($schema);
