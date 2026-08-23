@@ -3,27 +3,50 @@
         Data berita belum tersedia.
     </div>
 @else
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+    <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-6 lg:[&>*:nth-child(5n+4)]:col-start-2 lg:[&>*:nth-child(5n+1)]:col-start-1">
         @foreach ($newsItems as $news)
             <a href="{{ route('corner-show', $news->slug) }}"
                 wire:navigate
-                class="group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                class="col-span-1 sm:col-span-1 lg:col-span-2 group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-xl"
                 aria-label="{{ $news->title }}">
-                <div class="aspect-16/10 overflow-hidden bg-zinc-200">
+                <div class="aspect-[4/3] sm:aspect-16/10 overflow-hidden bg-zinc-400">
                     @if ($news->image)
                         <img 
                             src="{{ 'storage/' . $news->image }}" 
                             alt="{{ $news->title }}"
                             class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
                     @else
-                        <div class="flex h-full w-full items-center justify-center bg-zinc-200 text-zinc-500">
+                        <div class="flex h-full w-full items-center justify-center bg-zinc-400 text-zinc-600">
                             Tanpa Gambar
                         </div>
                     @endif
                 </div>
 
                 <div class="px-5 py-4">
-                    <h3 class="news-title-clamp text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
+                    <div class="mb-2.5 flex items-center justify-between">
+                        <!-- <span class="rounded bg-[#E3A96E] px-2 py-0.5 text-[11px] font-bold text-black">
+                            {{ $news->category ?? 'Berita' }} -->
+                        @php
+                            $catName = $news->category ?? 'Berita';
+                            $catLower = strtolower($catName);
+                            if ($catLower === 'berita') {
+                                $catBg = 'bg-blue-200 text-blue-800';
+                            } elseif (str_contains($catLower, 'prestasi')) {
+                                $catBg = 'bg-emerald-200 text-emerald-800';
+                            } elseif (str_contains($catLower, 'event')) {
+                                $catBg = 'bg-purple-200 text-purple-800';
+                            } else {
+                                $catBg = 'bg-amber-200 text-amber-800';
+                            }
+                        @endphp
+                        <span class="rounded {{ $catBg }} px-2 py-0.5 text-[11px] font-bold">
+                            {{ $catName }}
+                        </span>
+                        <span class="text-[11px] font-semibold text-black">
+                            tgl:{{ $news->created_at ? $news->created_at->format('d/m/Y') : 'dd/mm/yyyy' }}
+                        </span>
+                    </div>
+                    <h3 class="news-title-clamp text-[15px] font-bold leading-snug text-black sm:text-base">
                         {{ $news->title }}
                     </h3>
                 </div>
