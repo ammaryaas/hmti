@@ -25,8 +25,8 @@
                 <div class="px-5 py-4">
                     <div class="mb-2.5 flex items-center justify-between">
                         <span class="rounded px-2 py-0.5 text-[11px] font-bold"
-                            style="color: {{ $news->news_category->color }}80; background: {{ $news->news_category->color }}30; border: 1px solid {{ $news->news_category->color }}">
-                            {{ $news->news_category->name }}
+                            style="color: {{ $news->news_category->color ?? '#a8a8a8ff' }}80; background: {{ $news->news_category->color ?? '#a8a8a8ff' }}30; border: 1px solid {{ $news->news_category->color ?? '#a8a8a8ff' }}">
+                            {{ $news->news_category->name ?? 'Kategori tidak tersedia' }}
                         </span>
                         <span class="text-[11px] font-semibold text-black">
                             {{ ($news->published_at ?? $news->created_at)?->format('d/m/Y') ?? 'dd/mm/yyyy' }}
