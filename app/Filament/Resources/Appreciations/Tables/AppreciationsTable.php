@@ -17,28 +17,23 @@ class AppreciationsTable
         return $table
             ->columns([
                 ImageColumn::make('photo')
-                    ->label('Foto')
+                    ->label('Photo')
                     ->disk('public')
                     ->square(),
 
                 TextColumn::make('title')
-                    ->label('Judul Apresiasi')
+                    ->label('Appreciation Title')
                     ->searchable()
                     ->sortable()
                     ->limit(35)
                     ->tooltip(fn ($record) => $record->title),
 
-                TextColumn::make('mahasiswa.nama')
-                    ->label('Delegasi')
-                    ->searchable()
-                    ->sortable(),
-
-                TextColumn::make('mahasiswa.NIM')
-                    ->label('NIM')
-                    ->searchable(),
+                TextColumn::make('mahasiswa_count')
+                    ->label('Total Delegation')
+                    ->counts('mahasiswa'),
 
                 TextColumn::make('date')
-                    ->label('Tanggal')
+                    ->label('Date')
                     ->date('d M Y')
                     ->sortable(),
             ])

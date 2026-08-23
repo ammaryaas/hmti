@@ -13,7 +13,6 @@ class Appreciation extends Model
     protected $fillable = [
         'title',
         'photo',
-        'mahasiswa_id',
         'date',
     ];
 
@@ -24,8 +23,8 @@ class Appreciation extends Model
         ];
     }
 
-    public function mahasiswa(): BelongsTo
+    public function mahasiswa()
     {
-        return $this->belongsTo(Mahasiswa::class);
+        return $this->hasMany(Mahasiswa::class);
     }
 }

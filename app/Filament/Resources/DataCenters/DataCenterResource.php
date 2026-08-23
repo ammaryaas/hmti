@@ -24,6 +24,8 @@ class DataCenterResource extends Resource
     protected static ?string $recordTitleAttribute = 'DataCenter';
 
     protected static string | UnitEnum | null $navigationGroup = 'Data';
+    
+    protected static ?int $navigationSort = 4;
 
     public static function form(Schema $schema): Schema
     {

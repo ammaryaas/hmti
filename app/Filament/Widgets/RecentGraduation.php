@@ -2,40 +2,46 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Graduation as ModelsGraduation;
-use Filament\Actions\BulkActionGroup;
+use App\Models\Graduation;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget;
-use Illuminate\Database\Eloquent\Builder;
 
 class RecentGraduation extends TableWidget
 {
-    protected static ?int $sort = 2;
+    protected static ?int $sort = 5;
+
+    protected static ?string $heading = 'Data Wisuda Terakhir';
 
     public function table(Table $table): Table
     {
         return $table
-            ->query(fn (): Builder => ModelsGraduation::query())
+            ->query(
+                Graduation::query()
+                    ->withCount('mahasiswa')
+                    ->latest('schedule')
+                    ->limit(5)
+            )
             ->columns([
-                TextColumn::make('title'),
+                ImageColumn::make('photo')
+                    ->label('')
+                    ->disk('public')
+                    ->square(),
+
+                TextColumn::make('title')
+                    ->label('Periode Wisuda')
+                    ->weight('bold'),
+
+                TextColumn::make('schedule')
+                    ->label('Tanggal Pelaksanaan')
+                    ->date('d F Y'),
+
                 TextColumn::make('mahasiswa_count')
-                    ->label('Total Graduate')
-                    ->counts('mahasiswa'),
+                    ->label('Total Wisudawan')
+                    ->badge()
+                    ->color('success'),
             ])
-            ->filters([
-                //
-            ])
-            ->headerActions([
-                //
-            ])
-            ->recordActions([
-                //
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    //
-                ]),
-            ]);
+            ->paginated(false);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Graduations\RelationManagers;
+namespace App\Filament\Resources\Appreciations\RelationManagers;
 
 use Filament\Actions\AssociateAction;
 use Filament\Actions\CreateAction;

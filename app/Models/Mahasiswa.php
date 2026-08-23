@@ -15,6 +15,7 @@ class Mahasiswa extends Model
         'foto',
         'angkatan',
         'graduation_id',
+        'appreciation_id',
     ];
 
     public function seminar()
@@ -27,8 +28,8 @@ class Mahasiswa extends Model
         return $this->belongsTo(Graduation::class);
     }
 
-    public function appreciations()
+    public function appreciation()
     {
-        return $this->hasMany(Appreciation::class);
+        return $this->belongsTo(Appreciation::class);
     }
 }
