@@ -39,5 +39,7 @@
     </section>
 
     <livewire:home-latest-news />
+    <livewire:home-about-hmti />
     <livewire:home-cabinet-highlight />
+    <livewire:home-student-info />
 </x-layouts.app>
