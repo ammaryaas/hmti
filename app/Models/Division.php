@@ -26,4 +26,9 @@ class Division extends Model
     {
         return $this->hasMany(Member::class);
     }
+
+    public function members()
+    {
+        return $this->hasMany(Member::class);
+    }
 }

@@ -44,7 +44,7 @@
                 <div class="flex flex-wrap items-center gap-3 mb-6">
                     <!-- Kategori -->
                     <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-[#E3A96E] px-4 py-2 text-sm font-semibold text-black">
-                        {{ $news->category ?? 'Berita' }}
+                        {{ $news->news_category->name ?? 'Berita' }}
                     </div>
 
                     <!-- Tanggal -->
@@ -78,13 +78,10 @@
         </div>
 
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-4">
-            @php
-                $collections = [null, null, null]; 
-            @endphp
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                @foreach($collections as $index => $col)
-                    <div class="aspect-[4/3] bg-[#b1a9a9] rounded flex items-center justify-center shadow">
-                        <span class="text-black font-medium italic text-xl">Foto {{ $index + 1 }}</span>
+                @foreach($news->collection as $index => $col)
+                    <div class="aspect-4/3 bg-[#b1a9a9] rounded flex items-center justify-center shadow overflow-hidden">
+                        <img src="{{ '../storage/' . $col }}" alt="{{ $news->title }}" class="h-full w-full object-cover">
                     </div>
                 @endforeach
             </div>

@@ -26,4 +26,9 @@ class Mahasiswa extends Model
     {
         return $this->belongsTo(Graduation::class);
     }
+
+    public function appreciations()
+    {
+        return $this->hasMany(Appreciation::class);
+    }
 }

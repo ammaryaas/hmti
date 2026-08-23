@@ -18,10 +18,12 @@ return new class extends Migration
             $table->text('vision');
             $table->json('mission');
             $table->json('photo')->nullable();
+            $table->text('pl_name')->nullable();
+            $table->text('pl_logo')->nullable();
+            $table->text('pl_color')->nullable();
             $table->enum('status', ['active', 'inactive']);
             $table->year('period');
             $table->timestamps();
-
         });
     }
 

@@ -17,27 +17,33 @@
     <div class="relative z-10 mx-auto max-w-5xl px-6 md:px-12 mb-24">
         <div class="bg-white p-6 md:p-10 shadow-lg flex flex-col gap-6 rounded-sm">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <!-- Top 3 Items -->
-                <a href="https://docs.google.com/spreadsheets/d/13LFOoezlD7d0Z-YaHh_xXBON3iAFAXj5Exh-x3Rvcu0/edit?gid=1027305753#gid=1027305753" target="_blank" class="block aspect-[4/3] rounded-lg shadow overflow-hidden transition-transform duration-300 hover:scale-[1.03] hover:shadow-xl">
-                    <img src="{{ asset('Assets/infolomba.png') }}" alt="Info Lomba" class="w-full h-full object-cover">
-                </a>
-                <a href="{{ route('corner') }}"  class="block aspect-[4/3] rounded-lg shadow overflow-hidden transition-transform duration-300 hover:scale-[1.03] hover:shadow-xl">
-                    <img src="{{ asset('Assets/prestasi.png') }}" alt="Prestasi" class="w-full h-full object-cover">
-                </a>
-                <a href="https://drive.google.com/file/d/1PXqwneH-4GNCEz6qG_mZIswjr-ZeiKRq/view" target="_blank" class="block aspect-[4/3] rounded-lg shadow overflow-hidden transition-transform duration-300 hover:scale-[1.03] hover:shadow-xl">
-                    <img src="{{ asset('Assets/kalender.png') }}" alt="Kalender Akademik" class="w-full h-full object-cover">
-                </a>
-                
-                <!-- Bottom 3 Items -->
-                <div class="aspect-[4/3] rounded-lg shadow overflow-hidden">
-                    <img src="{{ asset('Assets/platypus.png') }}" alt="Games/Event" class="w-full h-full object-cover">
-                </div>
-                <div class="aspect-[4/3] rounded-lg shadow overflow-hidden">
-                    <img src="{{ asset('Assets/platypus.png') }}" alt="Games/Event" class="w-full h-full object-cover">
-                </div>
-                <div class="aspect-[4/3] rounded-lg shadow overflow-hidden">
-                    <img src="{{ asset('Assets/platypus.png') }}" alt="Games/Event" class="w-full h-full object-cover">
-                </div>
+                @forelse ($studentInfos as $info)
+                    @if ($info->link)
+                        <a href="{{ route('student-info.visit', $info->id) }}" target="_blank" rel="noopener noreferrer" class="block aspect-[4/3] rounded-lg shadow overflow-hidden transition-transform duration-300 hover:scale-[1.03] hover:shadow-xl">
+                            @if ($info->photo)
+                                <img src="{{ asset('storage/' . $info->photo) }}" alt="{{ $info->title }}" class="w-full h-full object-cover">
+                            @else
+                                <div class="w-full h-full bg-zinc-200 flex items-center justify-center p-4 text-center text-sm font-semibold text-zinc-700">
+                                    {{ $info->title }}
+                                </div>
+                            @endif
+                        </a>
+                    @else
+                        <div class="aspect-[4/3] rounded-lg shadow overflow-hidden">
+                            @if ($info->photo)
+                                <img src="{{ asset('storage/' . $info->photo) }}" alt="{{ $info->title }}" class="w-full h-full object-cover">
+                            @else
+                                <div class="w-full h-full bg-zinc-200 flex items-center justify-center p-4 text-center text-sm font-semibold text-zinc-700">
+                                    {{ $info->title }}
+                                </div>
+                            @endif
+                        </div>
+                    @endif
+                @empty
+                    <div class="col-span-full py-8 text-center text-zinc-500 font-medium">
+                        Belum ada informasi mahasiswa.
+                    </div>
+                @endforelse
             </div>
         </div>
     </div>
@@ -53,50 +59,42 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Event 1 -->
-            <div class="flex flex-col shadow-[0_8px_20px_rgba(0,0,0,0.15)] rounded-lg overflow-hidden border border-black/10">
-                <div class="bg-white min-h-[220px] flex items-center justify-center p-6 text-center text-sm font-medium text-gray-700">
-                    (Foto logo<br>eventnya atau<br>foto apa gitulah)
-                </div>
-                <div class="bg-[#bfbdbd] p-6 flex-1 flex flex-col">
-                    <div class="text-right border-b border-black pb-2 mb-4 text-sm font-bold text-black">
-                        tanggal pelaksanaan:<br>dd/mm/yyyy
+            @forelse($events as $event)
+                <div class="flex flex-col shadow-[0_8px_20px_rgba(0,0,0,0.15)] rounded-lg overflow-hidden border border-black/10 bg-[#bfbdbd]">
+                    <div class="bg-white min-h-[220px] aspect-[4/3] flex items-center justify-center overflow-hidden">
+                        @if($event->image)
+                            <img src="{{ asset('storage/' . $event->image) }}" alt="{{ $event->title }}" class="w-full h-full object-cover">
+                        @else
+                            <div class="p-6 text-center text-sm font-medium text-gray-400">
+                                Tanpa Gambar
+                            </div>
+                        @endif
                     </div>
-                    <div class="text-[13px] text-black leading-relaxed text-justify font-medium">
-                        Lorem ipsum sampe bawah.................................. (isinya penjelasan eventnya ngapain, tapi fontnya bisa dikecilin gitu sesuai kotakannya)
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 2 -->
-            <div class="flex flex-col shadow-[0_8px_20px_rgba(0,0,0,0.15)] rounded-lg overflow-hidden border border-black/10">
-                <div class="bg-white min-h-[220px] flex items-center justify-center p-6 text-center text-sm font-medium text-gray-700">
-                    (Foto logo<br>eventnya atau<br>foto apa gitulah)
-                </div>
-                <div class="bg-[#bfbdbd] p-6 flex-1 flex flex-col">
-                    <div class="text-right border-b border-black pb-2 mb-4 text-sm font-bold text-black">
-                        tanggal pelaksanaan:<br>dd/mm/yyyy
-                    </div>
-                    <div class="text-[13px] text-black leading-relaxed text-justify font-medium">
-                        Lorem ipsum sampe bawah.................................. (isinya penjelasan eventnya ngapain, tapi fontnya bisa dikecilin gitu sesuai kotakannya)
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 3 -->
-            <div class="flex flex-col shadow-[0_8px_20px_rgba(0,0,0,0.15)] rounded-lg overflow-hidden border border-black/10">
-                <div class="bg-white min-h-[220px] flex items-center justify-center p-6 text-center text-sm font-medium text-gray-700">
-                    (Foto logo<br>eventnya atau<br>foto apa gitulah)
-                </div>
-                <div class="bg-[#bfbdbd] p-6 flex-1 flex flex-col">
-                    <div class="text-right border-b border-black pb-2 mb-4 text-sm font-bold text-black">
-                        tanggal pelaksanaan:<br>dd/mm/yyyy
-                    </div>
-                    <div class="text-[13px] text-black leading-relaxed text-justify font-medium">
-                        Lorem ipsum sampe bawah.................................. (isinya penjelasan eventnya ngapain, tapi fontnya bisa dikecilin gitu sesuai kotakannya)
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-right border-b border-black pb-2 mb-4 text-xs md:text-sm font-bold text-black">
+                                Pelaksanaan:<br>
+                                <span class="font-normal">{{ $event->formatted_date }}</span>
+                            </div>
+                            <h3 class="font-bold text-base text-black mb-2">{{ $event->title }}</h3>
+                            <div class="text-[13px] text-black leading-relaxed text-justify font-medium line-clamp-4">
+                                {{ $event->desc }}
+                            </div>
+                        </div>
+                        @if($event->link)
+                            <div class="mt-4 pt-2 border-t border-black/20 text-right">
+                                <a href="{{ $event->link }}" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-[#B53737] hover:underline">
+                                    Detail Event &rarr;
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
-            </div>
+            @empty
+                <div class="col-span-full text-center py-10 bg-white/60 rounded-lg text-gray-600 font-medium">
+                    Belum ada informasi event saat ini.
+                </div>
+            @endforelse
         </div>
     </div>
 </section>
