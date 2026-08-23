@@ -19,10 +19,12 @@ class EventForm
             ->components([
                 TextInput::make('title')
                     ->columnSpanFull()
+                    ->placeholder('Industrial Competition External')
                     ->required(),
 
                 Textarea::make('desc')
                     ->label('Description')
+                    ->placeholder('Annual Sports Competition Organized by HMTI UNSOED')
                     ->columnSpanFull()
                     ->required(),
 
@@ -54,11 +56,19 @@ class EventForm
                     ->visible(fn (Get $get) => $get('has_time') && $get('has_end')),
 
                 TextInput::make('location')
+                    ->placeholder('Purbalingga, Jawa Tengah')
                     ->required(),
 
-                FileUpload::make('image'),
+                FileUpload::make('image')
+                    ->disk('public')
+                    ->directory('event'),
+
+                TextInput::make('link')
+                    ->label('Link / URL (Optional)')
+                    ->placeholder('https://example.com'),
 
                 Toggle::make('is_published')
+                    ->default(true)
                     ->inline(false),
             ]);
     }

@@ -1,9 +1,12 @@
 <?php
 
 use App\Livewire\AboutUsKabinet;
+use App\Livewire\DataCenter;
+use App\Livewire\HomeStudentInfo;
+use App\Livewire\EventPage;
 use App\Livewire\NewsDetail;
 use Illuminate\Support\Facades\Route;
-use Spatie\Sitemap\SitemapGenerator;
+// use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,7 +27,13 @@ Route::prefix('/corner')->name('corner')->group(function() {
 
 Route::view('/seminar', 'seminar')->name('seminar');
 Route::view('/wisuda', 'wisuda')->name('wisuda');
+Route::get('/event', EventPage::class)->name('event');
 Route::view('/data-center', 'data-center-page')->name('data-center');
-Route::view('/event', 'event-page')->name('event');
+
+// route buat tracking klik link data center
+Route::get('/data-center/{id}', [DataCenter::class, 'visit'])->name('data-center.visit');
+
+// route buat tracking klik link student info
+Route::get('student-info/{id}', [HomeStudentInfo::class, 'visit'])->name('student-info.visit');
 
 require __DIR__.'/auth.php';

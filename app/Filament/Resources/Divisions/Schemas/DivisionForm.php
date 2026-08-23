@@ -28,7 +28,9 @@ class DivisionForm
                     ->label('Description')
                     ->placeholder('Divisi yang bertanggung jawab atas...')
                     ->required(),
-                FileUpload::make('image'),
+                FileUpload::make('image')
+                    ->disk('public')
+                    ->directory('division'),
                 TextInput::make('sort_order')
                     ->placeholder('1')
                     ->helperText('Help you manage the display order.')

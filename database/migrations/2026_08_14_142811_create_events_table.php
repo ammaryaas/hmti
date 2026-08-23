@@ -20,6 +20,7 @@ return new class extends Migration
             $table->dateTime('end_at')->nullable();
             $table->boolean('has_time');
             $table->string('location');
+            $table->text('link')->nullable();
             $table->boolean('is_published');
             $table->timestamps();
         });

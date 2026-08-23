@@ -21,6 +21,7 @@ class SeminarForm
             ->components([
                 TextInput::make('title')
                     ->label('Judul Seminar')
+                    ->placeholder('Strategi Peningkatan Mutu...')
                     ->required(),
 
                 Radio::make('type')
@@ -38,7 +39,7 @@ class SeminarForm
                     ->schema([
                     Select::make('mahasiswa_id')
                         ->hiddenLabel()
-                        ->placeholder('Masukkan NIM')
+                        ->placeholder('H1E022001')
                         ->options(Mahasiswa::pluck('NIM', 'id'))
                         ->searchable()
                         ->preload()
@@ -67,10 +68,12 @@ class SeminarForm
 
                 TextInput::make('location')
                     ->label('Ruangan')
+                    ->placeholder('f112')
                     ->required(),
 
                 DateTimePicker::make('schedule')
                     ->label('Jadwal Seminar')
+                    ->seconds(false)
                     ->required(),
             ]);
     }

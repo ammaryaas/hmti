@@ -59,10 +59,9 @@
                     </svg>
                 </summary>
                 <div class="pointer-events-none absolute right-0 top-full mt-2 w-44 overflow-hidden rounded-xl border border-white/20 bg-[#B53737] text-white opacity-0 shadow-2xl transition duration-200 ease-out group-open:pointer-events-auto group-open:opacity-100">
-                    <a href="{{ route('event') }}" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>Event</a>
                     <a href="{{ route('seminar') }}" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>Seminar</a>
                     <a href="{{ route('wisuda') }}" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>Wisudaan</a>
-                    <a href="{{ route('wisuda') }}" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>Event</a>
+                    <a href="{{ route('event') }}" class="block rounded-lg px-3 py-2 text-sm text-white/80 transition hover:bg-white/10" data-close-dropdown>Event</a>
                 </div>
             </details>
         </div>

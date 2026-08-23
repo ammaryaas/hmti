@@ -12,7 +12,7 @@
                 <div class="aspect-[4/3] sm:aspect-16/10 overflow-hidden bg-zinc-400">
                     @if ($news->image)
                         <img 
-                            src="{{ 'storage/' . $news->image }}" 
+                            src="{{ asset('storage/' . $news->image) }}" 
                             alt="{{ $news->title }}"
                             class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
                     @else
@@ -24,26 +24,12 @@
 
                 <div class="px-5 py-4">
                     <div class="mb-2.5 flex items-center justify-between">
-                        <!-- <span class="rounded bg-[#E3A96E] px-2 py-0.5 text-[11px] font-bold text-black">
-                            {{ $news->category ?? 'Berita' }} -->
-                        @php
-                            $catName = $news->category ?? 'Berita';
-                            $catLower = strtolower($catName);
-                            if ($catLower === 'berita') {
-                                $catBg = 'bg-blue-200 text-blue-800';
-                            } elseif (str_contains($catLower, 'prestasi')) {
-                                $catBg = 'bg-emerald-200 text-emerald-800';
-                            } elseif (str_contains($catLower, 'event')) {
-                                $catBg = 'bg-purple-200 text-purple-800';
-                            } else {
-                                $catBg = 'bg-amber-200 text-amber-800';
-                            }
-                        @endphp
-                        <span class="rounded {{ $catBg }} px-2 py-0.5 text-[11px] font-bold">
-                            {{ $catName }}
+                        <span class="rounded px-2 py-0.5 text-[11px] font-bold"
+                            style="color: {{ $news->news_category->color }}80; background: {{ $news->news_category->color }}30; border: 1px solid {{ $news->news_category->color }}">
+                            {{ $news->news_category->name }}
                         </span>
                         <span class="text-[11px] font-semibold text-black">
-                            tgl:{{ $news->created_at ? $news->created_at->format('d/m/Y') : 'dd/mm/yyyy' }}
+                            {{ ($news->published_at ?? $news->created_at)?->format('d/m/Y') ?? 'dd/mm/yyyy' }}
                         </span>
                     </div>
                     <h3 class="news-title-clamp text-[15px] font-bold leading-snug text-black sm:text-base">

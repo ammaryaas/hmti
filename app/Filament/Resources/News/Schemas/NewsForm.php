@@ -44,9 +44,17 @@ class NewsForm
                     ->required(),
 
                 FileUpload::make('image')
-                    ->label('Gambar')
-                    ->disk('public')
+                    ->helperText('Main image')
                     ->image()
+                    ->disk('public')
+                    ->directory('news-images'),
+
+                FileUpload::make('collection')
+                    ->label('Collection')
+                    ->helperText('This image will appears on bottom of the page')
+                    ->multiple()
+                    ->image()
+                    ->disk('public')
                     ->directory('news-images'),
 
                 Select::make('status')

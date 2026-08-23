@@ -17,7 +17,7 @@
         <!-- Text Content -->
         <div class="flex-1 text-black">
             <h3 class="text-5xl md:text-6xl font-bold italic mb-6 leading-tight" style="font-family: 'Times New Roman', Times, serif;">
-                Kabinet<br>Sinkronisasi
+                Kabinet<br>{{ $activeCabinet->name }}
             </h3>
             <p class="text-base md:text-lg text-justify leading-relaxed">
                 HMTI Unsoed berdiri pada tanggal 4 Maret 2017. HMTI Unsoed adalah sebuah organisasi yang menghimpun, menampung, serta berusaha merealisasikan aspirasi mahasiswa Jurusan Teknik Industri Universitas Jenderal Soedirman berdasarkan asas dan sifat yang ditetapkan
@@ -26,7 +26,7 @@
 
         <!-- Logo -->
         <div class="w-full md:w-5/12 lg:w-1/3 flex justify-center md:justify-end">
-            <img src="{{ asset('Assets/kabinetsin.png') }}" alt="Logo Kabinet Sinkronisasi" class="w-64 md:w-80 object-contain drop-shadow-xl">
+            <img src="{{ asset('storage/' . $activeCabinet->logo) }}" alt="Logo Kabinet {{ $activeCabinet->name }}" class="w-64 md:w-80 object-contain drop-shadow-xl">
         </div>
     </div>
 </section>

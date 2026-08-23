@@ -23,7 +23,7 @@ class EventResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Event';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Content';
+    protected static string | UnitEnum | null $navigationGroup = 'Corners';
 
     public static function form(Schema $schema): Schema
     {

@@ -25,7 +25,9 @@ class MemberForm
                     ->placeholder('Ketua Umum')
                     ->required(),
                 FileUpload::make('photo')
-                    ->helperText('Photo will appears on structure view'),
+                    ->helperText('Photo will appears on structure view')
+                    ->disk('public')
+                    ->directory('member'),
             ]);
     }
 }

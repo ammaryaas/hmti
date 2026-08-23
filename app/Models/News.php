@@ -14,14 +14,15 @@ class News extends Model
         'slug',
         'news_category_id',
         'content',
-        'content',
         'image',
+        'collection',
         'status',
         'published_at',
     ];
 
     protected $casts = [
-        'published_at' => 'datetime'
+        'published_at' => 'datetime',
+        'collection' => 'array'
     ];
 
     public function news_category()

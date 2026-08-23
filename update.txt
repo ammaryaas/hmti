@@ -18,3 +18,8 @@ FE
 KONFIRMASI
 - corner gimana
 - double struktur di about us
+
+SISA
+- koleksi foto di corner
+- link event belum
+- 
