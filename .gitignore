@@ -24,3 +24,5 @@ yarn-error.log
 /.zed
 error_log
 /public/cabinet
+*.sql
+*.zip
