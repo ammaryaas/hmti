@@ -1,4 +1,4 @@
-<div class="space-y-12">
+<div class="space-y-8">
     @if ($graduates)
         <div
             class="inline-flex w-fit items-center gap-2 rounded-full border border-black/10 bg-white/70 px-5 py-2 text-base font-semibold text-slate-800 shadow-sm">
@@ -10,15 +10,14 @@
         </h1>
 
         <div class="relative overflow-hidden min-h-80 rounded-[28px] shadow-[0_22px_45px_rgba(0,0,0,0.22)]">
-            @if ($graduates->foto)
-                <img src="{{ 'storage/' . $graduates->foto }}" alt="Foto Bersama Wisuda"
+            @if ($graduates->photo)
+                <img src="{{ 'storage/' . $graduates->photo }}" alt="Foto Bersama Wisuda"
                     class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
             @else
-                <div class="flex flex-col items-center justify-center h-full w-full min-h-80 bg-gradient-to-br from-slate-100 to-slate-200 transition duration-300 group-hover:scale-[1.03]">
+                <div class="flex flex-col items-center justify-center h-full w-full min-h-80 bg-linear-to-br from-slate-100 to-slate-200 transition duration-300 group-hover:scale-[1.03]">
                     <div class="rounded-full bg-white/70 p-5 mb-3 shadow-sm">
                         <x-heroicon-o-photo class="h-12 w-12 text-slate-400"/>
                     </div>
-                    <!--<x-heroicon-s-photo class="h-20 w-20 text-sm text-slate-400" />-->
                 </div>
             @endif
             <div class="absolute inset-0 bg-linear-to-t from-black/55 via-black/10 to-transparent" aria-hidden="true"></div>
@@ -41,8 +40,13 @@
                     <article
                         class="group flex flex-col items-center rounded-3xl border border-slate-200/70 bg-white/90 px-6 py-7 text-center shadow-[0_16px_30px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_40px_rgba(15,23,42,0.15)]">
                         <div class="relative">
-                            <img src="{{ 'storage/' . $mahasiswa->foto }}" alt="{{ $mahasiswa->nama }}"
-                                class="h-28 w-28 rounded-2xl object-cover ring-2 ring-white/80 transition duration-300 group-hover:scale-[1.03]">
+                            @if ($mahasiswa->foto)
+                                <img src="{{ 'storage/' . $mahasiswa->foto }}" alt="{{ $mahasiswa->nama }}"
+                                    class="h-28 w-28 rounded-2xl object-cover ring-2 ring-white/80 transition duration-300 group-hover:scale-[1.03]">
+                            @else
+                                {{-- <img src="{{ 'storage/default' }}" alt=""> --}}
+                                <x-heroicon-s-user class="h-24 text-slate-200"/>
+                            @endif
                             <div class="absolute inset-0 rounded-2xl ring-1 ring-slate-200/70" aria-hidden="true"></div>
                         </div>
 

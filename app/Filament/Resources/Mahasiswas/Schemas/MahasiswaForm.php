@@ -18,12 +18,14 @@ class MahasiswaForm
             ->components([
                 TextInput::make('nama')
                     ->label('Nama')
+                    ->placeholder('Cahya Widya Wati')
                     ->columnSpanFull()
                     ->live(onBlur: true)
                     ->required(),
 
                 TextInput::make('NIM')
                     ->label('NIM')
+                    ->placeholder('H1E022001')
                     ->unique()
                     ->length(9)
                     ->live(onBlur: true)

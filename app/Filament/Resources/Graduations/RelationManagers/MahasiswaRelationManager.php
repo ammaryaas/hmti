@@ -3,17 +3,20 @@
 namespace App\Filament\Resources\Graduations\RelationManagers;
 
 use Filament\Actions\AssociateAction;
-use Filament\Actions\BulkActionGroup;
+use Filament\Actions\CreateAction;
+use Filament\Actions\EditAction;
 use Filament\Actions\DeleteAction;
+use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\DissociateAction;
 use Filament\Actions\DissociateBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Schemas\Schema;
 use Filament\Tables\Table;
+use Filament\Resources\RelationManagers\RelationManager;
 
 class MahasiswaRelationManager extends RelationManager
 {
@@ -23,9 +26,39 @@ class MahasiswaRelationManager extends RelationManager
     {
         return $schema
             ->components([
+                TextInput::make('nama')
+                    ->label('Nama')
+                    ->placeholder('Cahya Widya Wati')
+                    ->columnSpanFull()
+                    ->live(onBlur: true)
+                    ->required(),
+
                 TextInput::make('NIM')
-                    ->required()
-                    ->maxLength(255),
+                    ->label('NIM')
+                    ->placeholder('H1E022001')
+                    ->unique()
+                    ->length(9)
+                    ->live(onBlur: true)
+                    ->validationMessages([
+                        'unique' => 'This attribute has already exist',
+                        'lenght' => 'Please input the correct ID order',
+                    ])
+                    ->required(),
+
+                Select::make('angkatan')
+                    ->label('Angkatan')
+                    ->options(
+                        collect(range(2020, date('Y')))
+                            ->mapWithKeys(fn($year) => [$year => $year])
+                            ->toArray()
+                    ),
+
+                FileUpload::make('foto')
+                    ->label('Foto Mahasiswa')
+                    ->disk('public')
+                    ->directory('mahasiswa')
+                    ->image()
+                    ->columnSpanFull()
             ]);
     }
 
@@ -33,7 +66,6 @@ class MahasiswaRelationManager extends RelationManager
     {
         return $table
             ->recordTitleAttribute('NIM')
-            // ->modelLabel('NIM')
             ->columns([
                 TextColumn::make('nama'),
                 TextColumn::make('NIM')
@@ -44,7 +76,7 @@ class MahasiswaRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-                // CreateAction::make(),
+                CreateAction::make(),
                 AssociateAction::make(),
             ])
             ->recordActions([

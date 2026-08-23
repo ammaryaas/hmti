@@ -15,12 +15,22 @@ class Cabinet extends Model
         'vision',
         'mission',
         'photo',
+        'pl_name',
+        'pl_logo',
+        'pl_color',
         'status',
         'period',
     ];
 
     protected $casts = [
         'mission' => 'array',
-        'photo' => 'array'
+        'photo' => 'array',
+        'pl_logo' => 'array',
+        'pl_color' => 'array'
     ];
+
+    public function divisions()
+    {
+        return $this->hasMany(Division::class)->orderBy('sort_order', 'asc');
+    }
 }

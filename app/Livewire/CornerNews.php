@@ -11,8 +11,9 @@ class CornerNews extends Component
     public function render(): View
     {
         return view('livewire.corner-news', [
-            'newsItems' => News::where('status', 'published')
-                ->orderBy('published_at')
+            'newsItems' => News::with('news_category')
+                ->where('status', 'published')
+                ->orderByDesc('published_at')
                 ->get()
         ]);
     }

@@ -2,40 +2,50 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Seminar as ModelsSeminar;
-use Filament\Actions\BulkActionGroup;
+use App\Models\Seminar;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget;
-use Illuminate\Database\Eloquent\Builder;
 
 class RecentSeminar extends TableWidget
 {
-    protected static ?int $sort = 2;
+    protected static ?int $sort = 4;
+
+    protected static ?string $heading = 'Jadwal Seminar Terdaftar';
 
     public function table(Table $table): Table
     {
         return $table
-            ->query(fn (): Builder => ModelsSeminar::query())
+            ->query(
+                Seminar::query()
+                    ->with('mahasiswa')
+                    ->latest('schedule')
+                    ->limit(5)
+            )
             ->columns([
-                TextColumn::make('mahasiswa.nama'),
-                TextColumn::make('location'),
+                TextColumn::make('mahasiswa.nama')
+                    ->label('Mahasiswa')
+                    ->description(fn (Seminar $record): ?string => $record->mahasiswa?->NIM)
+                    ->weight('bold'),
+
+                TextColumn::make('type')
+                    ->label('Tipe')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'proposal' => 'info',
+                        'hasil' => 'warning',
+                        'sidang' => 'success',
+                        default => 'gray',
+                    }),
+
+                TextColumn::make('location')
+                    ->label('Ruangan'),
+
                 TextColumn::make('schedule')
-                    ->date('M j, Y H:i'),
+                    ->label('Jadwal')
+                    ->dateTime('d M Y, H:i')
+                    ->sortable(),
             ])
-            ->filters([
-                //
-            ])
-            ->headerActions([
-                //
-            ])
-            ->recordActions([
-                //
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    //
-                ]),
-            ]);
+            ->paginated(false);
     }
 }
