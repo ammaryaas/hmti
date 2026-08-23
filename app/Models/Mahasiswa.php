@@ -15,6 +15,7 @@ class Mahasiswa extends Model
         'foto',
         'angkatan',
         'graduation_id',
+        'appreciation_id',
     ];
 
     public function seminar()
@@ -25,5 +26,10 @@ class Mahasiswa extends Model
     public function graduation()
     {
         return $this->belongsTo(Graduation::class);
+    }
+
+    public function appreciation()
+    {
+        return $this->belongsTo(Appreciation::class);
     }
 }

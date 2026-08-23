@@ -2,19 +2,26 @@
 
 namespace App\Filament\Pages;
 
-use App\Filament\Widgets\RecentGraduation;
-use App\Filament\Widgets\RecentSeminar;
-use Filament\Pages\Dashboard as BaseDashboard;
 use App\Filament\Widgets\DashboardStats;
+use App\Filament\Widgets\RecentGraduation;
+use App\Filament\Widgets\RecentNews;
+use App\Filament\Widgets\RecentSeminar;
+use App\Filament\Widgets\UpcomingEvents;
+use Filament\Pages\Dashboard as BaseDashboard;
 
 class Dashboard extends BaseDashboard
 {
-    protected string $view = 'filament.pages.dashboard';
+    public function getColumns(): int | array
+    {
+        return 2;
+    }
 
-    public function getHeaderWidgets(): array
+    public function getWidgets(): array
     {
         return [
             DashboardStats::class,
+            UpcomingEvents::class,
+            RecentNews::class,
             RecentSeminar::class,
             RecentGraduation::class,
         ];

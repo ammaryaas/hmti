@@ -16,8 +16,9 @@ class NewsForm
         return $schema
             ->components([
                 TextInput::make('title')
-                    ->label('Judul')
-                    ->required()
+                    ->label('Title')
+                    ->placeholder('Pengabdian Masyarakat')
+                    ->columnSpanFull()
                     ->live(onBlur: true)
                     ->afterStateUpdated(
                         fn($state, callable $set) =>
@@ -27,18 +28,33 @@ class NewsForm
 
                 TextInput::make('slug')
                     ->required()
+                    ->hint('Keep it empty to automatically generate.')
                     ->unique(ignoreRecord: true),
+                    
+                Select::make('news_category_id')
+                    ->label('Category')
+                    ->relationship(name: 'news_category', titleAttribute: 'name')
+                    ->preload()
+                    ->required(),
 
                 RichEditor::make('content')
-                    ->label('Isi Berita')
-                    ->required()
+                    ->label('News Content')
+                    ->placeholder('Write down your news content here...')
                     ->columnSpanFull()
                     ->required(),
 
                 FileUpload::make('image')
-                    ->label('Gambar')
-                    ->disk('public')
+                    ->helperText('Main image')
                     ->image()
+                    ->disk('public')
+                    ->directory('news-images'),
+
+                FileUpload::make('collection')
+                    ->label('Collection')
+                    ->helperText('This image will appears on bottom of the page')
+                    ->multiple()
+                    ->image()
+                    ->disk('public')
                     ->directory('news-images'),
 
                 Select::make('status')

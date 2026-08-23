@@ -21,7 +21,6 @@ return new class extends Migration
             $table->enum('status', ['active', 'inactive']);
             $table->year('period');
             $table->timestamps();
-
         });
     }
 

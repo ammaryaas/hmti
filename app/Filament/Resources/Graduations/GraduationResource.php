@@ -25,6 +25,8 @@ class GraduationResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Data';
 
+    protected static ?int $navigationSort = 2;
+
     public static function form(Schema $schema): Schema
     {
         return GraduationForm::configure($schema);

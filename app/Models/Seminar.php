@@ -20,6 +20,11 @@ class Seminar extends Model
     protected $casts = [
         'schedule' => 'datetime'
     ];
+    
+    public function mahasiswa()
+    {
+        return $this->belongsTo(Mahasiswa::class);
+    }
 
     protected static array $statusConfig = [
         'internship' => [
@@ -46,10 +51,5 @@ class Seminar extends Model
     {
         return self::$statusConfig[$this->type]['color']
             ?? 'bg-gray-300';
-    }
-
-    public function mahasiswa()
-    {
-        return $this->belongsTo(Mahasiswa::class);
     }
 }
